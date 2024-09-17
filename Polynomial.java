@@ -18,7 +18,6 @@ public class Polynomial {
 
     public Polynomial add(Polynomial toAdd) {
         int maxLength = Math.max(this.coefficients.length, toAdd.coefficients.length);
-        int minLength = Math.min(this.coefficients.length, toAdd.coefficients.length);
 
         double[] result = new double[maxLength]; // [] not ()
         for (int i = 0; i < this.coefficients.length; i++) {
