@@ -22,21 +22,24 @@ public class Polynomial {
 
         double[] result = new double[maxLength]; // [] not ()
         for (int i = 0; i < this.coefficients.length; i++) {
-            result.coefficients[i] += this.coefficients[i];
+            result[i] += this.coefficients[i];
         }
         for (int i = 0; i < toAdd.coefficients.length; i++) {
-            result.coefficients[i] += toAdd.coefficients[i];
+            result[i] += toAdd.coefficients[i];
         }
 
         return new Polynomial(result);
     }
 
-    //Done 
-
-    public evaulate(double x) {
+    public double evaluate(double x) {
         double result = this.coefficients[0];
-        for (int i = 1; i < this.length; i++) {
-            result += Math.pow(this.coefficients[i], i);
+        for (int i = 1; i < this.coefficients.length; i++) {
+            result += this.coefficients[i] * Math.pow(x, i);
         }
+        return result;
+    }
+
+    public boolean hasRoot(double x) {
+        return (evaluate(x) == 0);
     }
 }
