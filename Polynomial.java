@@ -5,7 +5,6 @@ public class Polynomial {
     public Polynomial() {
         coefficients = new double[1];
         coefficients[0] = 0;
-
     }
 
     public Polynomial(double[] coeffs) {
@@ -19,7 +18,7 @@ public class Polynomial {
     public Polynomial add(Polynomial toAdd) {
         int maxLength = Math.max(this.coefficients.length, toAdd.coefficients.length);
 
-        double[] result = new double[maxLength]; // [] not ()
+        double[] result = new double[maxLength];
         for (int i = 0; i < this.coefficients.length; i++) {
             result[i] += this.coefficients[i];
         }
